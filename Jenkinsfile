@@ -3,9 +3,9 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="101075526478"
         AWS_DEFAULT_REGION="us-east-1" 
-	CLUSTER_NAME="default"
-	SERVICE_NAME="test-service"
-	TASK_DEFINITION_NAME="first-run-task-definition"
+	CLUSTER_NAME="ecs-demo-cluster-test"
+	SERVICE_NAME="ecs-demo-service-test"
+	TASK_DEFINITION_NAME="ecs-terraform-demo"
 	DESIRED_COUNT="4"
         IMAGE_REPO_NAME="demo"
         IMAGE_TAG="${env.BUILD_ID}"
