@@ -3,29 +3,18 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="101075526478"
         AWS_DEFAULT_REGION="us-east-1" 
-	CLUSTER_NAME="ecs-demo-cluster-test"
-	SERVICE_NAME="ecs-demo-service-test"
-	TASK_DEFINITION_NAME="ecs-terraform-demo"
-	DESIRED_COUNT="4"
+        CLUSTER_NAME="ecs-demo-cluster-test"
+        SERVICE_NAME="ecs-demo-service-test"
+        TASK_DEFINITION_NAME="ecs-terraform-demo"
+        DESIRED_COUNT="4"
         IMAGE_REPO_NAME="ecs-demo-test"
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-	registryCredential = "demo-admin-user"
+	      registryCredential = "demo-admin-user"
     }
    
     stages {
-
-    // Tests
-    stage('Unit Tests') {
-      steps{
-        script {
-          sh 'npm install'
-	  sh 'npm test -- --watchAll=false'
-        }
-      }
-    }
-        
-    // Building Docker images
+   // Building Docker images
     stage('Building image') {
       steps{
         script {
@@ -53,8 +42,7 @@ pipeline {
                 }
             } 
         }
-      }      
-      
+      }
     }
 }
 
