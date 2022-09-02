@@ -13,7 +13,7 @@ pipeline {
 	      registryCredential = "demo-admin-user"
     }
    
-    stages {
+  stages {
    // Building Docker images
     stage('Building image') {
       steps{
