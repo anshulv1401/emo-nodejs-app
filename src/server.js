@@ -3,7 +3,7 @@ var http = require('http');
 var server = http.createServer(function(request, response) {
 
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Congratulations! You have successfully automated ecs deployment with jenkins, github and terraform");
+    response.end("This is a test commit");
 
 });
 
